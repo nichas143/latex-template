@@ -1,0 +1,6 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{List of Theorems}{1}{section*.1}%
+\contentsline {chapter}{List of Definitions}{2}{section*.2}%
+\contentsline {chapter}{Contents}{4}{section*.4}%
+\contentsline {part}{\partnumberline {I}Pre-School}{5}{part.1}%
+\contentsline {appendix}{\chapternumberline {A}Documentation}{7}{appendix.A}%
