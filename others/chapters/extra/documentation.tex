@@ -1,0 +1,28 @@
+\chapter[Documentation]{Documentation}
+
+\begin{enumerate}
+    \item In order to make the appendix point to the page added in footnotes instead of using \tcboxverb{\hyperref} we should use autoref. Have shown its use in theorem \autoref{thm:finitestatetheorem}
+    \item To write todo notes we use the package todonotes. location of the documentation is \url{http://tug.ctan.org/macros/latex/contrib/todonotes/todonotes.pdf}
+    \item to add hints in questions - like highlighting of \hint{this kind} we use the key macro hint 
+    \item \tcboxverb{\clearpage} takes from two column document page to next page 
+    \item How to add the bibliography to the memoir document {\tiny  \begin{lstlisting}
+        // before the preamble. 
+        \usepackage{natbib}
+        // before index where we need the references 
+        \bibliographystyle{plain}
+        \bibliography{bibliography} // this is the .bib file. 
+    \end{lstlisting}}
+    Also note that we have to run in this order first latex in vscode, then in terminal 'bibtex main', then two more times run latex in vscode. -- you should get the reference and citation. just add \tcboxverb{\cite{}} to get the citation [1] like this 
+    \item table of contents and sections depth is set by commands \tcboxverb{\setcounter{tocdepth}{1}} means set till subsection. $3$ means till subsubsection. and for section \tcboxverb{\setcounter{secnumdepth}{2}}
+    \item the \tcboxverb{\usepackage{etoc}} and \tcboxverb{\localtableofcontents} to get minitoc on 
+    \item settings that need to be changed if pdf has to be made dark. check the following setting in \tcboxverb{settings.json}   
+    
+    \tcboxverb{//} this set of codes are for darkmode to be added into the vscode. settings .json.
+    \begin{verbatim}
+        "latex-workshop.view.pdf.color.dark.pageColorsForeground": "#ffffff",
+        "latex-workshop.view.pdf.color.dark.backgroundColor": "#ffffff",
+        "latex-workshop.view.pdf.invertMode.enabled": "auto",
+        "latex-workshop.view.pdf.invert": 1,    
+    \end{verbatim}
+    
+\end{enumerate}

@@ -1,0 +1,34 @@
+%%%%%%%%%%%%%%%%%% indexing 
+% Setup for MyStyle.ist
+%--------------------------------------
+% Formatage de l'index avec Tikz
+%--------------------------------------
+
+\newcommand*{\IndexDotfill}{%
+  \nobreak\dotfill\ \nobreak
+}
+\renewcommand*{\indexspace}{%
+  \par
+  \vspace{25pt plus 6pt minus 4pt}%
+}
+\newcommand*{\IndexHeading}[1]{%
+  \tikz\node[
+    rounded corners=5pt,
+    draw=cadet!10,
+    fill=cadet!20,
+    line width=1.2pt,
+    inner sep=4pt,
+    align=center,
+    % font=\sffamily\bfseries\large,
+    minimum width=20pt,%\linewidth-\pgflinewidth,
+  ] {#1};%
+  \nopagebreak
+  \par
+  \vspace{2mm}%
+}
+
+\usepackage{imakeidx}
+% \indexsetup{level=\section*,toclevel=section,noclearpage}
+\makeindex[columns=2, title  =Index, options = -s MyStyle.ist]
+% \makeindex[columns=2, title  =Index]
+%--------------------------------------

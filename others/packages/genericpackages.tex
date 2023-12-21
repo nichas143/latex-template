@@ -1,0 +1,61 @@
+
+
+\usepackage{graphicx}
+% \urlstyle{same}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{tikz}
+% \tcbuselibrary{breakable}
+% COMMENTING BOXES USING TCOLORBOX 
+\usepackage[skins]{tcolorbox}
+% this is used o give hints
+\newtcbox{\hint}[1][goldenyellow]{on line,arc=0pt,outer arc=0pt,colback=#1!80!white,colframe=#1!80!orange, boxsep=0pt,left=1pt,right=1pt,top=2pt,bottom=0pt, boxrule=0pt,bottomrule=2pt,toprule=0pt}
+
+
+
+\newtcbox{\concept}[1][red]{on line,arc=3pt,colback=#1!10!white,colframe=#1!50!black,before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=.5pt}
+
+% this takes a input text and gets a line 
+\newcommand*\ruleline[1]{\par\noindent\raisebox{.8ex}{\makebox[\linewidth]{\hrulefill\hspace{1ex}\raisebox{-.8ex}{\textsc{#1}}\hspace{1ex}\hrulefill}}}
+
+
+
+\usepackage[framemethod=tikz]{mdframed}
+\usetikzlibrary{shadows}
+\usepackage{amsmath,amsthm,amssymb,thmtools}
+
+% \usepackage[disable]{todonotes}
+% \usepackage{todonotes}
+
+\usepackage{listings}
+% \usepackage{titlesec}  %needs recent version of »titlesec«
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+
+% geometry based. 
+\usepackage{tikz}
+\usetikzlibrary{calc,intersections,through,backgrounds}
+\usepackage{tkz-euclide}
+\usepackage{parskip} %% <-- added
+
+% minitoc. (12dec)
+% \usepackage{titletoc}
+\usepackage{shorttoc}
+\newcommand\ToCrule{\noindent\rule[5pt]{\textwidth}{1.3pt}}
+\newcommand\ToCtitle{{\large\bfseries\partialtocname}\vskip2pt\ToCrule}
+\makeatletter
+\newcommand\Mprintcontents{%
+  \ToCtitle
+  \ttl@printlist[chapters]{toc}{}{1}{}\par\nobreak
+  \ToCrule}
+\makeatother
+
+\usepackage{enumitem}
+
+
+% mathematical packages 
+\usepackage{cancel}

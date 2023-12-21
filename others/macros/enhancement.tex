@@ -1,0 +1,157 @@
+% \tcbuselibrary{listings,theorems,skins,breakable}
+
+%remember 
+\newmdtheoremenv[fontcolor=cadet!80!black,linewidth=1.2pt,outerlinewidth=2,leftmargin=40,% 
+rightmargin=40,backgroundcolor=cadet!10,% 
+linecolor=cadet!70,
+roundcorner=10pt,   
+outerlinecolor=cadet!30,innertopmargin=2pt,% 
+splittopskip=\topskip,skipbelow=\baselineskip,% 
+skipabove=\baselineskip,ntheorem]{remember}% 
+{Remember :}[section]
+\renewcommand{\theremember}{\relax}
+
+
+
+
+
+
+% define new colors 
+%% source is https://latexcolor.com/
+\usepackage{xcolor}
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{ashgrey}{rgb}{0.7, 0.75, 0.71} 
+\definecolor{glaucous}{rgb}{0.38, 0.51, 0.71}
+\definecolor{calpolypomor=burgundy}{rgb}{0.12, 0.3, 0.17}
+\definecolor{mustard}{rgb}{1.0, 0.86, 0.35}
+\definecolor{khaki(x11)(lightkhaki)}{rgb}{0.94, 0.9, 0.55}
+\definecolor{fer=burgundy}{rgb}{0.31, 0.47, 0.26}
+\definecolor{pakistr=burgundy}{rgb}{0.0, 0.4, 0.0}
+\definecolor{pir=burgundy}{rgb}{0.0, 0.47, 0.44}
+\definecolor{raspberry}{rgb}{0.89, 0.04, 0.36}
+\definecolor{darkcyan}{rgb}{0.0, 0.55, 0.55}
+\definecolor{darktangerine}{rgb}{1.0, 0.66, 0.07}
+\definecolor{dukeblue}{rgb}{0.0, 0.0, 0.61}
+\definecolor{burgundy}{rgb}{0.1, 0.1, 0.44}
+\definecolor{goldenyellow}{rgb}{1.0, 0.87, 0.0}
+\definecolor{cadet}{rgb}{0.33, 0.41, 0.47}
+\definecolor{amethyst}{rgb}{0.6, 0.4, 0.8}
+\definecolor{armygreen}{rgb}{0.29, 0.33, 0.13}
+\definecolor{bazaar}{rgb}{0.6, 0.47, 0.48}
+\definecolor{bulgarianrose}{rgb}{0.28, 0.02, 0.03}
+\definecolor{cerulean}{rgb}{0.0, 0.48, 0.65}
+\definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
+\definecolor{darklavender}{rgb}{0.45, 0.31, 0.59}
+% theorem 
+\newmdtheoremenv[fontcolor=red!60!black,linewidth=0pt,outerlinewidth=2,leftmargin=40,% 
+rightmargin=40,backgroundcolor=magenta!15,% 
+outerlinecolor=magenta!15,innertopmargin=2pt,% 
+splittopskip=\topskip,
+% splitbottomskip=10pt,
+skipbelow=\baselineskip,% 
+roundcorner=4pt,
+% shadow=true,
+% shadowcolor=magenta!80,
+skipabove=\baselineskip,ntheorem]{thm}% 
+{Theorem}[chapter]
+
+
+% lemma 
+\newcommand{\lemmacolor}{darkgreen}%pakistr=burgundy}
+\newmdtheoremenv[fontcolor=\lemmacolor,linewidth=0pt,outerlinewidth=2,leftmargin=40,% 
+rightmargin=40,backgroundcolor=\lemmacolor!8,% 
+outerlinecolor=\lemmacolor!8,innertopmargin=2pt,% 
+splittopskip=\topskip,skipbelow=\baselineskip,% 
+roundcorner=4pt,
+% shadow=true,
+% shadowcolor=darkcyan!80,
+skipabove=\baselineskip,ntheorem]{lem}% 
+{Lemma}[chapter]
+
+% corollary
+\newcommand{\corcolor}{darkgreen}%pakistr=burgundy}
+\newmdtheoremenv[fontcolor=\corcolor,linewidth=0pt,outerlinewidth=2,leftmargin=40,% 
+rightmargin=40,backgroundcolor=\corcolor!8,% 
+outerlinecolor=\corcolor!8,innertopmargin=2pt,% 
+splittopskip=\topskip,skipbelow=\baselineskip,% 
+roundcorner=4pt,
+skipabove=\baselineskip,ntheorem]{cor}% 
+{Corollary}[lem]
+
+% definition 
+\newmdtheoremenv[fontcolor=olive!70!black,linewidth=0pt,outerlinewidth=2,leftmargin=40,% 
+rightmargin=40,backgroundcolor=olive!10,% 
+outerlinecolor=olive!10,innertopmargin=2pt,% 
+splittopskip=\topskip,skipbelow=\baselineskip,% 
+roundcorner=4pt,
+% shadow=true,
+% shadowcolor=olive!80,
+skipabove=\baselineskip,ntheorem]{defn}% 
+{Definition}[chapter]
+
+
+
+
+%% problem
+\newcommand{\problemcolor}{darklavender}%cerulean%burgundy}
+\newmdtheoremenv[fontcolor=\problemcolor,linewidth=0pt,outerlinewidth=1,leftmargin=40,% 
+rightmargin=40,backgroundcolor=\problemcolor!5,% 
+outerlinecolor=\problemcolor!15,
+innertopmargin=2pt,% 
+splittopskip=\topskip,skipbelow=\baselineskip,% 
+roundcorner=4pt,
+% shadow=true,
+% shadowcolor=burgundy!80,
+skipabove=\baselineskip,ntheorem]{problem}% 
+{Problem}[section]
+
+
+
+
+% challenging problem. 
+\newcommand{\chacolor}{bulgarianrose}
+\newmdtheoremenv[fontcolor=\chacolor,linewidth=0pt,outerlinewidth=2,leftmargin=40,% 
+rightmargin=40,backgroundcolor=\chacolor!10,% 
+outerlinecolor=\chacolor!5,innertopmargin=2pt,% 
+roundcorner=3pt,
+shadow=true,
+shadowcolor=\chacolor!30,
+splittopskip=\topskip,skipbelow=\baselineskip,% 
+skipabove=\baselineskip,ntheorem]{chaproblem}% 
+{Challenging Problem}[section]
+
+% session for faculty discussion. 
+\newmdtheoremenv[linewidth=0pt,outerlinewidth=2,leftmargin=40,% 
+rightmargin=40,backgroundcolor=gray!5,% 
+outerlinecolor=gray!30,innertopmargin=2pt,% 
+roundcorner=4pt,
+splittopskip=\topskip,skipbelow=\baselineskip,% 
+skipabove=\baselineskip,ntheorem]{session}% 
+{Faculty discussion}[section]
+
+% research article
+%% using style.
+\mdfdefinestyle{theoremstyle}{% 
+linecolor=glaucous!20 ,linewidth=1pt,% 
+frametitlerule=true,%
+roundcorner=10pt,
+fontcolor=calpolypomor=burgundy,
+frametitlebackgroundcolor=glaucous!10, 
+innertopmargin=\topskip,
+innerbottommargin=\topskip,
+backgroundcolor=white%glaucous!5
+} 
+\mdtheorem[style=theoremstyle]{research}{Research} 
+
+\mdfdefinestyle{theoremstyle}{% 
+linecolor=glaucous!20 ,linewidth=1pt,% 
+frametitlerule=true,%
+roundcorner=10pt,
+fontcolor=calpolypomor=burgundy,
+frametitlebackgroundcolor=glaucous!10, 
+innertopmargin=\topskip,
+innerbottommargin=\topskip,
+backgroundcolor=white%glaucous!5
+} 
+\mdtheorem[style=theoremstyle]{assignment}{Assignment}

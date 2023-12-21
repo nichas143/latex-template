@@ -1,0 +1,128 @@
+
+%% CHESS
+\usepackage[T1]{fontenc}
+\usepackage{chessboard}
+\usepackage[ps]{skak}
+\usepackage{xskak}
+% set size of the board
+%\setchessboard{boardfontsize=12pt,labelfontsize=10pt}
+
+
+
+%\tcbuselibrary{listings,theorems,skins,breakable}
+\usepackage{tikz}
+\usepackage{varwidth}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[framemethod = tikz]{mdframed}
+
+
+
+
+
+
+% defence 
+\newcommand{\openingSecondMove}[3]{
+	\subsection{#1 (1. #2 #3)}
+	\newchessgame
+	\hidemoves{1. #2}
+	\mainline{1...#3}
+
+	\chessboard[inverse, tinyboard]
+
+}
+
+% whites attack 
+\newcommand{\openingThirdMove}[3]{
+	\subsection{#1 ( #2 2. #3)}
+	\newchessgame
+	\hidemoves{#2}
+	\mainline{2.#3}
+
+	\chessboard[ tinyboard]
+
+}
+
+% defence 
+\newcommand{\openingFourthMove}[3]{
+	\subsection{#1 ( #2 #3)}
+	\newchessgame
+	\hidemoves{#2}
+	\mainline{2...#3}
+
+	\chessboard[inverse, tinyboard]
+
+}
+
+% whites attack 
+\newcommand{\openingFifthMove}[3]{
+	\subsection{#1 (#2 3. #3)}
+	\newchessgame
+	\hidemoves{#2}
+	\mainline{3. #3}
+
+	\chessboard[ tinyboard]
+
+}
+
+% defence 
+\newcommand{\openingSixthMove}[3]{
+	\subsection{#1 (#2 #3)}
+	\newchessgame
+	\hidemoves{#2}
+	\mainline{3...#3}
+
+	\chessboard[inverse, tinyboard]
+
+}
+
+
+%% THIS IS A NEW MACRO wrote on 18 Nov 2023
+% It takes three arguments 
+% 1. The move number 
+% 2. The first move of white 
+% 3. The first move of black. 
+% \twomoves{<move no>}{e4}{e5} 
+
+\newcommand{\tinychessboard}{\chessboard[tinyboard]}
+\newcommand{\inversetinychessboard}{\chessboard[tinyboard,inverse]}
+
+
+\newcommand{\twomoves}[3]{
+\textbf{#1. #2 #3}
+
+\ifthenelse{#1 = 1}{\newchessgame}{}
+\hidemoves{#1. #2}
+%\tinychessboard
+%\inversetinychessboard
+\hidemoves{#1...#3}
+\tinychessboard
+\inversetinychessboard
+}
+
+\newcommand{\onemove}[1]{
+\textbf{#1}
+\hidemoves{#1}
+
+\tinychessboard
+\inversetinychessboard
+}
+
+
+
+% SHOW MOVES (mark them) 
+\newcommand{\showWhiteMoves}[1]{
+\chessboard[pgfstyle = straightmove, color=red, markmoves={#1}]
+}
+\newcommand{\showBlackMoves}[1]{
+\chessboard[pgfstyle = straightmove, color=red, backmoves={#1}]
+}
+
+\newcommand{\showMovesWithFen}[3]{
+\chessboard[setfen=#1 #2 - - 0 0, pgfstyle = straightmove, color=red, markmoves={#3}]
+}
+
+\newcommand{\showtwomoves}[1]{
+	\hidemoves{#1}
+	\chessboard[tinyboard]
+}

@@ -1,0 +1,196 @@
+
+% this is to add code to MyStyle.ist file and other part of the code is on line 53 \input{others/packages/indexingCodes.tex}
+% (START) INDEXING PART 1 code 
+\RequirePackage{filecontents}
+\begin{filecontents*}[overwrite]{MyStyle.ist}
+delim_0 "}\\IndexDotfill "
+delim_1 "\\IndexDotfill "
+headings_flag 1
+heading_prefix "  \\IndexHeading{"
+heading_suffix "}\n"
+item_0 "\n \\item {\\bfseries " 
+item_x1 "}\n \\subitem "
+\end{filecontents*}
+% (END) INDEXING PART 1 code 
+
+
+
+
+
+\documentclass[a4paper,10pt, twoside,twocolumn]{memoir}
+
+% \chapterstyle{default}
+
+
+% (START ) - TOC ON EACH CHAPTER
+% this enables writing local table of contents. 
+\usepackage{etoc}
+% (END ) - TOC ON EACH CHAPTER
+
+
+% (START) GEOMETRY PACKAGE
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+%  total={170mm,250mm},
+ left=2cm,
+ right=2cm,
+ top=2cm,
+ bottom=2cm
+ }
+ % (END) GEOMETRY PACKAGE
+
+
+
+
+
+
+% enhancing the document with microtype 
+\usepackage{microtype}
+
+
+
+
+
+% include packages 
+\input{others/packages/genericpackages.tex}
+\input{others/macros/enhancement.tex}
+\input{others/macros/enhancement-extra.tex}
+\input{others/macros/macros.tex}
+\input{others/chapters/extra/hidingSpecificEnvironmen.tex}
+\input{chess/chess-macros.tex}
+
+% bib
+\usepackage{natbib}
+
+
+
+
+
+\input{others/packages/indexingCodes.tex}
+
+
+
+
+
+% depth of toc and section. 
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+% HYPERREF Has to run last. 
+ \usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=magenta,
+  citecolor=brown
+}
+
+
+
+
+%START OF DOCUMENT 
+\begin{document}
+
+
+
+% list of theorems and definition
+\listoftheorems[ignoreall, show={thm,lem}]
+\begingroup   % Temporarily disable \clearpage to show both lists on one page
+  \let\clearpage\relax    % http://tex.stackexchange.com/a/14511/104449
+  \renewcommand{\listtheoremname}{List of Definitions}
+  \listoftheorems[ignoreall, show={defn}]
+\endgroup
+
+
+
+
+
+% TABLE OF CONTENTS
+\shorttableofcontents{Brief Toc}{0}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PART 1 - PRE Olympiad 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part[Pre-School]{Pre-School}
+\include{others/chapters/schoolmath/numbers}
+\include{others/chapters/schoolmath/algebraic-expressions}
+
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%% PART 2 - POST SCHOOL 
+% \part[Post-School Fundamentals]{Post-School Fundamentals}
+% \include{others/chapters/basics/1.basics}
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%% PART 2 - Olympiad Mathematics 
+
+% \part[ Olympiad Problem Solving]{Olympiad Mathematics}
+
+
+% %% Algebra
+% \include{others/chapters/algebra/sequences}
+% \include{others/chapters/algebra/recursiveSequences}
+% % \include{others/chapters/algebra/quadratic}
+
+
+% Combinatorics 
+% enumerative combinatorics 
+% \include{others/chapters/combinatorics/enumerativecombi}
+% \include{others/chapters/combinatorics/binomial}
+
+
+% %% Advanced Ideas in Olympiads
+% \include{others/chapters/basics/1.extremalPrinciple}
+% \include{others/chapters/basics/2.monovariants}
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%% PART 3 - Advanced Mathematics 
+% \part[Advanced Mathematics]{Advanced Mathematical Study}
+% \input{others/chapters/AdvancedMath/toRead}
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%% Personal Writings
+% \part[Personal]{Personal Writings}
+% % \input{personal/readingBooks/rationalityStevenPinkler}
+% \input{personal/readingBooks/skinInTheGame}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%% Chess
+% \part[Chess]{Chess Notes}
+% \input{chess/testfile.tex}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% APPENDIX
+
+\appendix 
+% \input{others/chapters/basics/monovariantAppendix}
+\input{others/chapters/extra/documentation}
+% \input{others/chapters/Appendix/problemSolvingStrategies.tex}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%% BIBILIOGRAPHY 
+
+% \bibliographystyle{plain}
+% \bibliography{bibliography}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% INDEX
+
+\backmatter
+\printindex
+\end{document}
+

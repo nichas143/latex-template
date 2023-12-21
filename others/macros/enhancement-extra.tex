@@ -1,0 +1,22 @@
+% solution environment 
+\newenvironment{sol}
+  {\begin{proof}[Solution]}
+  {\end{proof}}
+
+  \newenvironment{varsol}
+  {\begin{proof}[Variant Solution]}
+  {\end{proof}}
+
+  \newenvironment{proofs}
+  {\begin{proof}[Proofs]}
+  {\end{proof}}
+
+% to control the setting in enumerate
+\usepackage{enumerate}
+% used to reduce the distance between the items and paragraph. 
+\newenvironment{new_enumerate}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}

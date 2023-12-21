@@ -1,0 +1,11 @@
+#ignore files 
+*.aux 
+*.bbl
+main.mtc*
+main.log
+main.maf
+main.mtc
+main.ilg
+main.ind
+main.idx
+
